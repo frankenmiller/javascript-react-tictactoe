@@ -1,27 +1,22 @@
 import { useState } from "react";
 
 function Square({ value, onSquareClick }) {
-  // const [value, setValue] = useState(null);
-  // function handleClick() {
-  //   if (value === null) {
-  //     setValue('X');
-  //   } else if (value === 'X') {
-  //     setValue('O');
-  //   } else if (value === 'O') {
-  //     setValue(null);
-  //   }
-  // }
   return (
     <button className="square" onClick={onSquareClick}>
       {value}
     </button>
   );
-}
+} // Square()
 
 export default function Board() {
   const [XisNext, setXisNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+
   function handleClick(i) {
+    // <!--handleClick()
+    if (squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice();
     if (XisNext) {
       nextSquares[i] = "O";
@@ -30,7 +25,8 @@ export default function Board() {
     }
     setSquares(nextSquares);
     setXisNext(!XisNext);
-  }
+  } // <!-------------------------handleClick()
+
   return (
     <>
       <p>
@@ -62,4 +58,4 @@ export default function Board() {
       </div>
     </>
   );
-}
+} // Board()
