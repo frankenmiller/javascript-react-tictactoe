@@ -72,12 +72,50 @@ p {
   transform: translateX(-180px);
 }
 
+.status {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  transform: translate(-160px, -3px);
+  background: #000;
+  border: #fff 3px solid;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.instructions {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#line_one {
+  transform: translate(-155px, 50px);
+}
+
+#line_two {
+  transform: translate(-155px, 70px);
+}
+
+#line_three {
+  transform: translate(-155px, 90px);
+}
+
+#line_four {
+  transform: translate(-155px, 110px);
+}
+
 .gamebox {
   width: 199px;
   height: 198px;
   border: 3px solid #fff;
   margin-left: 50%;
-  transform: translateX(-97px);
+  transform: translateX(-17px);
 }
 
 .square {

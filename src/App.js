@@ -1,19 +1,27 @@
 import { useState } from "react";
 
 function Square({ value, onSquareClick }) {
+  // <!------------------- Square()
   return (
     <button className="square" onClick={onSquareClick}>
       {value}
     </button>
   );
-} // Square()
+} // <!------------------------------------------------------------ Square()
 
 export default function Board() {
+  // <!----------------------------- Board()
   const [XisNext, setXisNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const winner = calculateWinner(squares);
+  let status;
+  let instructLineOne;
+  let instructLineTwo;
+  let instructLineThree;
+  let instructLineFour;
 
   function handleClick(i) {
-    // <!--handleClick()
+    // <!----------------------------- handleClick()
     if (squares[i]) {
       return;
     }
@@ -25,7 +33,16 @@ export default function Board() {
     }
     setSquares(nextSquares);
     setXisNext(!XisNext);
-  } // <!-------------------------handleClick()
+  } // <!--------------------------------------------------- handleClick()
+  if (winner) {
+    status = "The Winner:  " + winner;
+  } else {
+    status = "Next player: " + (XisNext ? " O" : "X");
+  }
+  instructLineOne = "Take turns clicking on";
+  instructLineTwo = "squares. The 1st player";
+  instructLineThree = "to get all 3-in--row will";
+  instructLineFour = "be declared the winner!";
 
   return (
     <>
@@ -35,6 +52,19 @@ export default function Board() {
         Created January 2023 in ReactJS
       </p>
       <div className="gamebox">
+        <div className="status">{status}</div>
+        <div className="instructions" id="line_one">
+          {instructLineOne}
+        </div>
+        <div className="instructions" id="line_two">
+          {instructLineTwo}
+        </div>
+        <div className="instructions" id="line_three">
+          {instructLineThree}
+        </div>
+        <div className="instructions" id="line_four">
+          {instructLineFour}
+        </div>
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -58,4 +88,25 @@ export default function Board() {
       </div>
     </>
   );
-} // Board()
+} // <!------------------------------------------------------------- Board()
+
+function calculateWinner(squares) {
+  // <!------------------ calculateWinner()
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+} // <!---------------------------------------------------- calculateWinner()
