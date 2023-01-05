@@ -5,6 +5,7 @@
 body {
   font-family: sans-serif;
   margin: 20px;
+  height: 100%;
   padding: 0;
   background: linear-gradient(to top, #000, #757575);
 }
@@ -72,6 +73,22 @@ p {
   transform: translateX(-180px);
 }
 
+.bufficorns {
+  margin-left: 50%;
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  transform: translate(-158px, -12px);
+  max-width: 350px;
+  font-size: 25px;
+  background-color: #000;
+  border: 3px white solid;
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: -5;
+}
+
 .status {
   position: absolute;
   color: #fff;
@@ -99,15 +116,15 @@ p {
 }
 
 #line_two {
-  transform: translate(-155px, 70px);
+  transform: translate(-158px, 70px);
 }
 
 #line_three {
-  transform: translate(-155px, 90px);
+  transform: translate(-153px, 90px);
 }
 
 #line_four {
-  transform: translate(-155px, 110px);
+  transform: translate(-158px, 110px);
 }
 
 .gamebox {
@@ -115,12 +132,12 @@ p {
   height: 198px;
   border: 3px solid #fff;
   margin-left: 50%;
-  transform: translateX(-17px);
+  transform: translateX(-5px);
 }
 
 .square {
   color: #fff;
-  background: darkblue;
+  background: #000;
   border: 1px solid #fff;
   float: left;
   font-size: 50px;

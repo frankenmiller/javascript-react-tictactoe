@@ -19,6 +19,7 @@ export default function Board() {
   let instructLineTwo;
   let instructLineThree;
   let instructLineFour;
+  let bufficornBrigade;
 
   function handleClick(i) {
     // <!----------------------------- handleClick()
@@ -27,9 +28,9 @@ export default function Board() {
     }
     const nextSquares = squares.slice();
     if (XisNext) {
-      nextSquares[i] = "O";
+      nextSquares[i] = "🦬";
     } else {
-      nextSquares[i] = "X";
+      nextSquares[i] = "🦙";
     }
     setSquares(nextSquares);
     setXisNext(!XisNext);
@@ -37,12 +38,13 @@ export default function Board() {
   if (winner) {
     status = "The Winner:  " + winner;
   } else {
-    status = "Next player: " + (XisNext ? " O" : "X");
+    status = "Next player: " + (XisNext ? "  🦬" : "🦙");
   }
   instructLineOne = "Take turns clicking on";
   instructLineTwo = "squares. The 1st player";
-  instructLineThree = "to get all 3-in--row will";
+  instructLineThree = "to get all 3-in-row will";
   instructLineFour = "be declared the winner!";
+  bufficornBrigade = "🦬 Buffaloes vs llamas 🦙";
 
   return (
     <>
@@ -51,6 +53,7 @@ export default function Board() {
         <br />
         Created January 2023 in ReactJS
       </p>
+      <div className="bufficorns">{bufficornBrigade}</div>
       <div className="gamebox">
         <div className="status">{status}</div>
         <div className="instructions" id="line_one">
