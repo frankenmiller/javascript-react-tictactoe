@@ -65,7 +65,7 @@ p {
   font-size: 20px;
   text-align: center;
   color: #fff;
-  background: darkblue;
+  background: #000;
   border: 3px solid #fff;
   word-wrap: normal;
   margin-left: 50%;
@@ -124,19 +124,19 @@ p {
 }
 
 #line_one {
-  transform: translate(-155px, 50px);
+  transform: translate(-158px, 45px);
 }
 
 #line_two {
-  transform: translate(-158px, 70px);
+  transform: translate(-158px, 68px);
 }
 
 #line_three {
-  transform: translate(-153px, 90px);
+  transform: translate(-155px, 91px);
 }
 
 #line_four {
-  transform: translate(-158px, 110px);
+  transform: translate(-158px, 115px);
 }
 
 .gamebox {

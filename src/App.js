@@ -39,14 +39,18 @@ export default function Board() {
   if (winner) {
     status = winner + winner + winner + "'s Win!";
     loser = (XisNext ? "🦬" : "🦙") + (XisNext ? "🦬" : "🦙") + "'s SUCK!";
+    instructLineOne = "Thank you for testing my";
+    instructLineTwo = "game! Please hit browser";
+    instructLineThree = "refresh button play 🦬's ";
+    instructLineFour = "vs 🦙's again and again!";
   } else {
     status = "Next player: " + (XisNext ? "🦬" : "🦙");
     loser = "FIGHT! FIGHT!";
+    instructLineOne = "Take turns clicking on";
+    instructLineTwo = "squares. The 1st player";
+    instructLineThree = "to get all 3-in-a-row will";
+    instructLineFour = "be declared the winner!";
   }
-  instructLineOne = "Take turns clicking on";
-  instructLineTwo = "squares. The 1st player";
-  instructLineThree = "to get all 3-in-row will";
-  instructLineFour = "be declared the winner!";
   bufficornBrigade = "🦬 Buffaloes vs llamas 🦙";
 
   return (
@@ -88,7 +92,6 @@ export default function Board() {
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
       </div>
-      <br />
       <div className="footer">
         <p>linkedin.com/in/frankenmiller</p>
         <p>github.com/frankenmiller</p>
