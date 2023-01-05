@@ -182,7 +182,25 @@ p {
 }
 
 .footer {
+}
+
+.social_links {
   text-align: center;
-  font-size: 15px;
-  padding-bottom: 15px;
+  font-weight: bold;
+  width: 350px;
+  margin-left: 50%;
+  font-size: 20px;
+  color: #fff;
+  background: #000;
+  border: 3px solid #fff;
+  height: 40px;
+  padding-top: 4px;
+}
+
+#github {
+  transform: translate(-180px, 40px);
+}
+
+#linkedin {
+  transform: translate(-180px, 20px);
 }

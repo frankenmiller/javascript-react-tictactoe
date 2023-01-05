@@ -16,6 +16,8 @@ export default function Board() {
   const winner = calculateWinner(squares);
   let status;
   let loser;
+  let linkedin;
+  let github;
   let instructLineOne;
   let instructLineTwo;
   let instructLineThree;
@@ -43,6 +45,8 @@ export default function Board() {
     instructLineTwo = "game! Please hit browser";
     instructLineThree = "refresh button play 🦬's ";
     instructLineFour = "vs 🦙's again and again!";
+    linkedin = (XisNext ? "🧑🏽‍💻 Let's hang out and BUIDL" : "linkedin.com/in/frankenmiller");
+    github = (XisNext ? "https://github.com/frankenmiller" : "🧑🏽‍💻 I want to be on your team!")    
   } else {
     status = "Next player: " + (XisNext ? "🦬" : "🦙");
     loser = "FIGHT! FIGHT!";
@@ -50,8 +54,18 @@ export default function Board() {
     instructLineTwo = "squares. The 1st player";
     instructLineThree = "to get all 3-in-a-row will";
     instructLineFour = "be declared the winner!";
+    linkedin = (XisNext ? "I want to be on your team!" : "linkedin.com/in/frankenmiller");
+    github = (XisNext ? "https://github.com/frankenmiller" : "Let's build cool things together")
   }
-  bufficornBrigade = "🦬 Buffaloes vs llamas 🦙";
+  if (winner) {
+    if (calculateWinner(squares) === "🦬") {
+      bufficornBrigade = "👏🏽 👏🏽 Buffaloes Win! 👏🏽 👏🏽";
+    } else if (calculateWinner(squares) === "🦙") {
+      bufficornBrigade = "👏🏽👏🏽👏🏽 llamas Win! 👏🏽👏🏽👏🏽";
+    }
+  } else {
+    bufficornBrigade = "🦬 Buffaloes vs llamas 🦙";
+  }
 
   return (
     <>
@@ -93,8 +107,8 @@ export default function Board() {
         </div>
       </div>
       <div className="footer">
-        <p>linkedin.com/in/frankenmiller</p>
-        <p>github.com/frankenmiller</p>
+        <div className="social_links" id="linkedin">{linkedin}</div>
+        <div className="social_links" id="github">{github}</div>
       </div>
     </>
   );
