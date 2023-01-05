@@ -15,6 +15,7 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const winner = calculateWinner(squares);
   let status;
+  let loser;
   let instructLineOne;
   let instructLineTwo;
   let instructLineThree;
@@ -36,9 +37,11 @@ export default function Board() {
     setXisNext(!XisNext);
   } // <!--------------------------------------------------- handleClick()
   if (winner) {
-    status = "The Winner:  " + winner;
+    status = winner + winner + winner + "'s Win!";
+    loser = (XisNext ? "🦬" : "🦙") + (XisNext ? "🦬" : "🦙") + "'s SUCK!";
   } else {
-    status = "Next player: " + (XisNext ? "  🦬" : "🦙");
+    status = "Next player: " + (XisNext ? "🦬" : "🦙");
+    loser = "FIGHT! FIGHT!";
   }
   instructLineOne = "Take turns clicking on";
   instructLineTwo = "squares. The 1st player";
@@ -56,6 +59,7 @@ export default function Board() {
       <div className="bufficorns">{bufficornBrigade}</div>
       <div className="gamebox">
         <div className="status">{status}</div>
+        <div className="loser_box">{loser}</div>
         <div className="instructions" id="line_one">
           {instructLineOne}
         </div>

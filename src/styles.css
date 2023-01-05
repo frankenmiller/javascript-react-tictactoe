@@ -61,8 +61,7 @@ body {
 
 p {
   font-weight: bold;
-  min-width: 350px;
-  max-width: 400px;
+  width: 350px;
   font-size: 20px;
   text-align: center;
   color: #fff;
@@ -93,7 +92,20 @@ p {
   position: absolute;
   color: #fff;
   text-align: center;
-  transform: translate(-160px, -3px);
+  transform: translate(-160px, 150px);
+  background: #000;
+  border: #fff 3px solid;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.loser_box {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  height: 44px;
+  transform: translate(-156px, -3px);
   background: #000;
   border: #fff 3px solid;
   padding: 5px;
