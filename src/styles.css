@@ -79,8 +79,8 @@ p {
   color: #fff;
   font-weight: bold;
   text-align: center;
-  transform: translate(-158px, -12px);
-  max-width: 350px;
+  transform: translate(-180px, -12px);
+  width: 350px;
   font-size: 25px;
   background-color: #000;
   border: 3px white solid;
@@ -132,7 +132,7 @@ p {
   height: 198px;
   border: 3px solid #fff;
   margin-left: 50%;
-  transform: translateX(-5px);
+  transform: translateX(-28px);
 }
 
 .square {
